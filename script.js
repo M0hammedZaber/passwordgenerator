@@ -108,6 +108,20 @@ function generatePassword()
     alert("To generate a password, you must enter a number of characters.");
     generatePassword()
 
+  } else {
+    alert(`Your password will include ${passwordLength} characters.`);
+
+    let userGeneratedPassword = "";
+    let userSelectSpecialCharacters = confirm("Click OK to confirm using special characters.");
+    let userSelectNumericCharacters = confirm("Click OK to confirm using numbers.");
+    let userSelectLowerCasedCharacters = confirm("Click OK to confirm using lowercase characters.");
+    let userSelectUpperCasedCharacters = confirm("Click OK to confirm using uppercase characters.");
+
+    if (userSelectUpperCasedCharacters === false && userSelectLowerCasedCharacters === false && userSelectSpecialCharacters === false && userSelectNumericCharacters === false) {
+      alert("You must choose at least one type of character in order to generate a password.");
+      generatePassword()
+    }
+
 };
 
 // Get references to the #generate element
