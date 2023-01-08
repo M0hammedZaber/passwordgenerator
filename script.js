@@ -88,25 +88,27 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-//First step was to include the prompts for the users password to seee what they want, I asked all the questions for the challenege and simply placed them under the functions getpasswordoptions.
-function getPasswordOptions() {
-passwordLength = prompt("Please choose a password length from atleast 10 characters but no more than 64?")
-lowerCasedCharacters = prompt("Click ok to confirm using lowercase characters")
-upperCasedCharacters = prompt("Click ok to confirm using uppercase characters")
-numericCharacters = prompt("Click ok to confirm using numeric characters")
-specialCharacters = prompt ("Click ok to confirm using speacial characters");
-}
-
-// Function for getting a random element from an array
-function getRandom(arr) {
-  var lowerCasedCharacters = lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)];
-}
+// Declaring the variables being used throughout the code 
+var upperCasedCharacters
+var lowerCasedCharacters
+var numericCharacters
+var specialCharacters
 
 // Function to generate password with user input
-function generatePassword() {
+function generatePassword() 
 
-}
+  //First step was to put in the promts under generate password. 
+  let passwordLength = prompt("How many characters would you like your password to contain?");
+
+  if (passwordLength <= 9 || passwordLength >= 65) {
+    alert("Your password must be between 10 and 64 characters.");
+    generatePassword()
+
+  } else if (!passwordLength) {
+    alert("To generate a password, you must enter a number of characters.");
+    generatePassword()
+
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -115,8 +117,6 @@ var generateBtn = document.querySelector('#generate');
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
 }
 
 // Add event listener to generate button
