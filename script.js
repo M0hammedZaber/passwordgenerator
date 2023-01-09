@@ -99,6 +99,7 @@ function generatePassword() {
 
   //First step was to put in the promts under generate password. 
   let passwordLength = prompt("How many characters would you like your password to contain?");
+//I need to make an if statement for the system to show that the password has to be within 10-64 characters. Then I will create a further 2 statements to warn that to generate a paaword this criteria needs to be met, finally finishing off with the a reminder of how many characters they have chosen for their passeword.
 
   if (passwordLength <= 9 || passwordLength >= 65) {
     alert("Your password must be between 10 and 64 characters.");
@@ -110,7 +111,7 @@ function generatePassword() {
 
   } else {
     alert(`Your password will include ${passwordLength} characters.`);
-
+// Here I have selected my questions to ask what sort of password they want, I have used confirm so they can easily select what the user wants in the password. 
     let userGeneratedPassword = "";
     let userSelectSpecialCharacters = confirm("Click OK to confirm using special characters.");
     let userSelectNumericCharacters = confirm("Click OK to confirm using numbers.");
@@ -121,7 +122,7 @@ function generatePassword() {
       alert("You must choose at least one type of character in order to generate a password.");
       generatePassword()
     }
-
+//Here we are pushing the 4 given password choices together in a concat to smash them together. Also saying if this is selected then and what is included.
     var userSelectedCharacters = [];
   
     if (userSelectSpecialCharacters) {
@@ -141,7 +142,7 @@ function generatePassword() {
     if (userSelectUpperCasedCharacters) {
       userSelectedCharacters = userSelectedCharacters.concat(upperCasedCharacters)
     }
-
+//A loop is needed to run through the password length to generate a password, chosen a match random as is the formula to create a genuine password, whilst setting what the user generated password would equal within the loop to pull the data. 
     for (var i = 0; i < passwordLength; i++) {
       userGeneratedPassword = userGeneratedPassword + userSelectedCharacters[Math.floor(Math.random() * userSelectedCharacters.length)];
     }
