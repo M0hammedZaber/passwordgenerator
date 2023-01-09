@@ -95,7 +95,7 @@ var numericCharacters
 var specialCharacters
 
 // Function to generate password with user input
-function generatePassword() 
+function generatePassword() {
 
   //First step was to put in the promts under generate password. 
   let passwordLength = prompt("How many characters would you like your password to contain?");
@@ -121,6 +121,36 @@ function generatePassword()
       alert("You must choose at least one type of character in order to generate a password.");
       generatePassword()
     }
+
+    var userSelectedCharacters = [];
+  
+    if (userSelectSpecialCharacters) {
+      userSelectedCharacters = userSelectedCharacters.concat(specialCharacters)
+    }
+
+    if (userSelectNumericCharacters) {
+      userSelectedCharacters = userSelectedCharacters.concat(numericCharacters)
+    }
+
+
+    if (userSelectLowerCasedCharacters) {
+      userSelectedCharactersn = userSelectedCharacters.concat(lowerCasedCharacters)
+    }
+
+
+    if (userSelectUpperCasedCharacters) {
+      userSelectedCharacters = userSelectedCharacters.concat(upperCasedCharacters)
+    }
+
+    for (var i = 0; i < passwordLength; i++) {
+      userGeneratedPassword = userGeneratedPassword + userSelectedCharacters[Math.floor(Math.random() * userSelectedCharacters.length)];
+    }
+
+    var passwordText = document.querySelector('#password');
+    passwordText.value = ""
+
+    passwordText.value = userGeneratedPassword;
+  }
 
 };
 
