@@ -97,9 +97,9 @@ var specialCharacters
 // Function to generate password with user input
 function generatePassword() {
 
-  //First step was to put in the promts under generate password. 
+  //First step was to put in the promts under generate password. I later changed this to the correct place.
   let passwordLength = prompt("How many characters would you like your password to contain?");
-//I need to make an if statement for the system to show that the password has to be within 10-64 characters. Then I will create a further 2 statements to warn that to generate a paaword this criteria needs to be met, finally finishing off with the a reminder of how many characters they have chosen for their passeword.
+//I need to make an if statement for the system to show that the password has to be within 10-64 characters. Then I will create a further 2 statements to warn the user that to generate a password this criteria needs to be met, finally finishing off with the a reminder of how many characters they have chosen for their password.
 
   if (passwordLength <= 9 || passwordLength >= 65) {
     alert("Your password must be between 10 and 64 characters.");
@@ -122,7 +122,7 @@ function generatePassword() {
       alert("You must choose at least one type of character in order to generate a password.");
       generatePassword()
     }
-//Here we are pushing the 4 given password choices together in a concat to smash them together. Also saying if this is selected then and what is included.
+//Here we are pushing the 4 given password choices together in a concat to smash them together. Also saying if this is selected then this is what needs to happen and what is included.
     var userSelectedCharacters = [];
   
     if (userSelectSpecialCharacters) {
@@ -142,7 +142,7 @@ function generatePassword() {
     if (userSelectUpperCasedCharacters) {
       userSelectedCharacters = userSelectedCharacters.concat(upperCasedCharacters)
     }
-//A loop is needed to run through the password length to generate a password, chosen a match random as is the formula to create a genuine password, whilst setting what the user generated password would equal within the loop to pull the data. 
+//A loop is needed to run through the password length to generate a password, chosen a math random as it is the formula to create a genuine password, whilst setting what the user generated password would equal within the loop to pull the data. 
     for (var i = 0; i < passwordLength; i++) {
       userGeneratedPassword = userGeneratedPassword + userSelectedCharacters[Math.floor(Math.random() * userSelectedCharacters.length)];
     }

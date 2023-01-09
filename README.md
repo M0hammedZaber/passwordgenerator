@@ -2,7 +2,7 @@
 
 ## Description 
 
-I have completed the code for the password genertor, I now know why we were taught about models a few weeks ago, it's great to put this into practice.
+I have completed the code for the password generator, I now know why we were taught about models a few weeks ago, it's great to put this into practice.
 
 I am learning so much in this course and so excited to see it all coming together.
 
