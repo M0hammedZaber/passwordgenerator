@@ -2,16 +2,16 @@
 
 ## Description 
 
-I have completed the code for ...
+I have completed the code for the password genertor, I now know why we were taught about models a few weeks ago, it's great to put this into practice.
 
-I am getting more and more motivation as I go through the assignments as my learning is getting stronger and had a chance to illustarte my JavaScript skills.
+I am learning so much in this course and so excited to see it all coming together.
 
 
 ## Screenshot
-<img src="images/" alt="final output of ...">
+<img src="images/password genrator end.png" alt="final output of my password generator code">
 
 ## Link
-The site is live at https://m0hammedzaber.github.io/
+The site is live at https://m0hammedzaber.github.io/passwordgenerator/
 
 ## License 
 MIT license
